@@ -1,13 +1,11 @@
 package Inlämningsuppgifter;
 import java.util.*;
-
 public class assignmentOneLogic {
     private HashMap<String, String> morseMapping;
-
     public assignmentOneLogic() {
         morseMapping = new HashMap<>();
 
-        //Alphabet
+        //Alphabet, adds keys and values to the HashMap.
         morseMapping.put("a", "*-");
         morseMapping.put("b", "-***");
         morseMapping.put("c", "-*-*");
@@ -49,33 +47,33 @@ public class assignmentOneLogic {
         morseMapping.put(".", "*-*-*-");
         morseMapping.put(",", "--**--");
         morseMapping.put("?", "**--**");
-
     }
 
     //Text to Morse
-    public String TextToMorse(String k) {
+    public String TextToMorse(String value) {
         String returnValue = "";
-        String[] characters = k.split("");
+        //Make an array of given value
+        String[] characters = value.split("");
+        //For each element in array
         for (String chars : characters) {
-            for (HashMap.Entry<String, String> morseEntry : morseMapping.entrySet()) {
-                if (morseEntry.getKey().equalsIgnoreCase(chars)) {
-                    returnValue += morseEntry.getValue() + " "; // Adds space between letters.
+            //Get key and Value
+            for (HashMap.Entry<String, String> morseCalc : morseMapping.entrySet()) {
+                if (morseCalc.getKey().equals(chars)) {
+                    returnValue += morseCalc.getValue() + " "; // Adds space between letters to separate.
                 }
-
             }
         }
-        return returnValue.trim(); //Removes ending space of the word/letter.
+        return returnValue.trim(); //Removes whitespaces following.
     }
 
-
     //Morse to Text
-    public String MorseToText(String v) {
+    public String MorseToText(String value) {
         String returnValue = "";
-        String[] morse = v.split(" ");
+        String[] morse = value.split(" ");
         for (String chars : morse) {
-            for (HashMap.Entry<String, String> morseEntry : morseMapping.entrySet()) {
-                if (morseEntry.getValue().equals(chars)) {
-                    returnValue += morseEntry.getKey();
+            for (HashMap.Entry<String, String> morseCalc : morseMapping.entrySet()) {
+                if (morseCalc.getValue().equals(chars)) {
+                    returnValue += morseCalc.getKey();
                 }
             }
         }

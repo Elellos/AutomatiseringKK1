@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class assignmentOneMain {
     public static void main(String[] args) {
 
-        assignmentOneLogic Logic = new assignmentOneLogic();
+        assignmentOneLogic logic = new assignmentOneLogic();
         Scanner scan = new Scanner(System.in);
         boolean continual = true;
         while (continual) {
@@ -18,12 +18,12 @@ public class assignmentOneMain {
                     System.out.println("You have entered TEXT to Morse Converter ");
                     System.out.println("Please type a letter or a text to get the morsecode.");
                     String text = scan.nextLine().toLowerCase();
-                    System.out.print(text.toUpperCase() +" = " + Logic.TextToMorse(text));
+                    System.out.print(text.toUpperCase() +" = " + logic.TextToMorse(text));
                 } else if (menu.equals("2")) {
                     System.out.println("You entered for MORSE to Text Converter ");
                     System.out.println("Please type the morsecode to get the letter.");
                     String text = scan.nextLine();
-                    System.out.println(text + " = " + Logic.MorseToText(text).toUpperCase());
+                    System.out.println(text + " = " + logic.MorseToText(text).toUpperCase());
                 } else {
                     continual = false;
                     System.out.println("You need to enter either 1 or 2.");
@@ -41,9 +41,11 @@ public class assignmentOneMain {
                     }
                 }
             } catch (NoSuchElementException e) {
-                System.out.println("Invalid input. No line found.");
+                System.out.println("Invalid input. No such command is allowed!!!!!");
+                break;
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                System.out.println("Invalid input. No such command is correct");
+                break;
             }
         }
     }
