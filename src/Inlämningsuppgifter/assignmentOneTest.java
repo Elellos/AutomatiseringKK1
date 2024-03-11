@@ -10,13 +10,30 @@ public class assignmentOneTest {
         assignmentOneLogic logic = new assignmentOneLogic();
 
         // Input Morse code
-        String testdata = "*-";
+        String testdata = "-**";
 
         // Call method from logic class
         String actual = logic.MorseToText(testdata);
 
         // Expected output
-        String expected = "a";
+        String expected = "d";
+
+        // Compare expected and actual results
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testMorseToText911() {
+        assignmentOneLogic logic = new assignmentOneLogic();
+
+        // Input Morse code
+        String testdata = "----* *---- *----";
+
+        // Call method from logic class
+        String actual = logic.MorseToText(testdata);
+
+        // Expected output
+        String expected = "911";
 
         // Compare expected and actual results
         assertEquals(expected, actual);
@@ -37,28 +54,25 @@ public class assignmentOneTest {
 
         // Compare expected and actual results
         assertEquals(expected, actual);
-
     }
 
     @Test
-    public void testTextToMorseAB(){
+    public void testTextToMorseStarWars(){
         assignmentOneLogic logic = new assignmentOneLogic();
 
         // Input Morse code
-        String testdata = "ab";
+        String testdata = "StarWars";
 
         // Call method from logic class
         String actual = logic.TextToMorse(testdata);
 
         // Expected output
-        String expected ="*- -***";
+        String expected = "*** - *- *-* *-- *- *-* ***";
 
         // Compare expected and actual results
         assertEquals(expected, actual);
 
     }
-
-
 }
 
 

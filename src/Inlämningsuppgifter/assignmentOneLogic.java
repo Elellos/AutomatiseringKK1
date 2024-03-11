@@ -58,7 +58,7 @@ public class assignmentOneLogic {
         for (String chars : characters) {
             //Get key and Value
             for (HashMap.Entry<String, String> morseCalc : morseMapping.entrySet()) {
-                if (morseCalc.getKey().equals(chars)) {
+                if (morseCalc.getKey().equalsIgnoreCase(chars)) {
                     returnValue += morseCalc.getValue() + " "; // Adds space between letters to separate.
                 }
             }
