@@ -1,5 +1,4 @@
 package Inlämningsuppgifter;
-
 import java.util.*;
 import java.util.Scanner;
 
@@ -37,28 +36,12 @@ public class assignmentOneMain {
                     System.out.print(".");
                     Thread.sleep(500);
                     for (int i = 0; i < quit.length(); i++) {
-
                         System.out.print(quit.charAt(i));
                         Thread.sleep(200);
                     }
-
-                    /*
-                    System.out.println("Quitting the Program");
-                    Thread.sleep(1200);
-                    System.out.print(".");
-                    Thread.sleep(1200);
-                    System.out.print(".");
-                    Thread.sleep(1200);
-                    System.out.print(".");
-                    Thread.sleep(1200);
-                    System.out.print(".");
-                    System.out.println("PROGRAM SHUTDOWN");
-
-                     */
                 }
             } catch (NoSuchElementException e) {
                 System.out.println("Invalid input. No line found.");
-                scan.nextLine(); // Consume the invalid input
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

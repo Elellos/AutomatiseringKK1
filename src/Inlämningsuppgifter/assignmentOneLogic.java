@@ -1,5 +1,4 @@
 package Inlämningsuppgifter;
-
 import java.util.*;
 
 public class assignmentOneLogic {
@@ -53,7 +52,6 @@ public class assignmentOneLogic {
 
     }
 
-
     //Text to Morse
     public String TextToMorse(String k) {
         String returnValue = "";
@@ -61,13 +59,12 @@ public class assignmentOneLogic {
         for (String chars : characters) {
             for (HashMap.Entry<String, String> morseEntry : morseMapping.entrySet()) {
                 if (morseEntry.getKey().equalsIgnoreCase(chars)) {
-                    //System.out.print("Morsevalue for the letter " + "("+chars.toUpperCase()+")" + " is: " + morseEntry.getValue());
-                    returnValue += morseEntry.getValue() + " ";
+                    returnValue += morseEntry.getValue() + " "; // Adds space between letters.
                 }
 
             }
         }
-        return returnValue.trim();
+        return returnValue.trim(); //Removes ending space of the word/letter.
     }
 
 
@@ -78,12 +75,10 @@ public class assignmentOneLogic {
         for (String chars : morse) {
             for (HashMap.Entry<String, String> morseEntry : morseMapping.entrySet()) {
                 if (morseEntry.getValue().equals(chars)) {
-                    //System.out.println("Letter for the Morsevalue " + "("+chars +")" + " is: " + morseEntry.getKey());
                     returnValue += morseEntry.getKey();
                 }
             }
         }
         return returnValue;
-
     }
 }
