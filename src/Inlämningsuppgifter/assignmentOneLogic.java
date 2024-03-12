@@ -51,12 +51,13 @@ public class assignmentOneLogic {
 
     //Text to Morse
     public String TextToMorse(String value) {
+        //Saves the returnvalue from the morsecalc
         String returnValue = "";
         //Make an array of given value
         String[] characters = value.split("");
         //For each element in array
         for (String chars : characters) {
-            //Get key and Value
+            //Get key and Value from HashMap.entry, where the hashmap puts are stored in morsecalc.
             for (HashMap.Entry<String, String> morseCalc : morseMapping.entrySet()) {
                 if (morseCalc.getKey().equalsIgnoreCase(chars)) {
                     returnValue += morseCalc.getValue() + " "; // Adds space between letters to separate.
@@ -70,6 +71,10 @@ public class assignmentOneLogic {
     public String MorseToText(String value) {
         String returnValue = "";
         String[] morse = value.split(" ");
+        //Looks if our sent in value does not contain a "*" or a "-", throws exception.
+        if (!value.contains("*") && !value.contains("-")) {
+            throw new IllegalArgumentException("Invalid Morse code input. Morse code should contain at least one '*' or '-'.");
+        }
         for (String chars : morse) {
             for (HashMap.Entry<String, String> morseCalc : morseMapping.entrySet()) {
                 if (morseCalc.getValue().equals(chars)) {

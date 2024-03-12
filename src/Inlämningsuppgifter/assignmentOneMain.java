@@ -40,11 +40,8 @@ public class assignmentOneMain {
                         Thread.sleep(200);
                     }
                 }
-            } catch (NoSuchElementException e) {
-                System.out.println("Invalid input. No such command is allowed!!!!!");
-                break;
-            } catch (InterruptedException e) {
-                System.out.println("Invalid input. No such command is correct");
+            } catch (NoSuchElementException | InterruptedException e) {
+                System.out.println("Invalid input. No such command is allowed!!!!! Program Shutdown");
                 break;
             }
         }

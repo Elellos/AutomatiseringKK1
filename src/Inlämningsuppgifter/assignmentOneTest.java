@@ -73,6 +73,23 @@ public class assignmentOneTest {
         assertEquals(expected, actual);
 
     }
+
+    @Test
+    public void testTextToMorseSwedishLetters(){
+        assignmentOneLogic logic = new assignmentOneLogic();
+
+        // Input Morse code
+        String testdata = "åäö";
+
+        // Call method from logic class
+        String actual = logic.TextToMorse(testdata);
+
+        // Expected output
+        String expected ="";
+
+        // Compare expected and actual results
+        assertEquals(expected, actual);
+    }
 }
 
 
